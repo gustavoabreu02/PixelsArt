@@ -9,6 +9,7 @@ function coresPaleta () {
     for (let i = 0; i < cores.length; i += 1) {
         let divColor = document.createElement('div');
         divColor.className = 'color';
+        divColor.classList.add(cores[i]);
         divColor.style.border = '1px solid black';
         divColor.style.height = '50px';
         divColor.style.width = '50px';
@@ -40,3 +41,9 @@ function pixels () {
     section.style.margin = '5px'
 }
 pixels ();
+
+//requisito 6
+let corBlack = document.querySelector('.black');
+corBlack.classList.add('selected');
+
+
