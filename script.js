@@ -6,6 +6,7 @@ function coresPaleta () {
     acessoMain.appendChild(section);
     let acessoSection = document.querySelector('#color-palette');
     let cores = ['black', 'blue', 'green', 'yellow']
+    acessoMain.style.marginLeft = '43.3%'
     for (let i = 0; i < cores.length; i += 1) {
         let divColor = document.createElement('div');
         divColor.className = 'color';
@@ -37,7 +38,8 @@ function pixels () {
     }
     section.style.display = 'grid'
     section.style.gridTemplateColumns = '40px 40px 40px 40px 40px'
-    section.style.margin = '5px'
+    section.style.marginLeft = '2.3%'
+    section.style.marginTop = '40px'
 }
 pixels ();
 
@@ -71,7 +73,9 @@ let cores = document.querySelectorAll('.color');
 let Listacores = ['black', 'blue', 'green', 'yellow'];
 let pixel = document.querySelectorAll('.pixel')
 let sectionPixel = document.querySelector('#pixel-board');
-sectionPixel.addEventListener('click', evento2);
+for (let i2 = 0; i2 < pixel.length; i2 += 1) {
+pixel[i2].addEventListener('click', evento2);
+}
 function evento2 () {
 for (let i = 0; i < cores.length; i += 1) {
     cores[i].id = Listacores[i]
