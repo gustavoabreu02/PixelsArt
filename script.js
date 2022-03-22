@@ -46,10 +46,11 @@ let corBlack = document.querySelectorAll('.color');
 corBlack[0].classList.add('selected');
 
 //requisito 7
-let divCores = document.querySelector('#color-palette');
 function selecionaCor () {
+let sectionCores = document.querySelector('#color-palette');
 let cores = document.querySelectorAll('.color')
-divCores.addEventListener('click', function(event){
+sectionCores.addEventListener('click', evento);
+function evento () {
     for (let i = 0; i < cores.length; i += 1) {
         if (event.target.className == 'color') {
             cores[i].className = 'color'
@@ -59,7 +60,30 @@ divCores.addEventListener('click', function(event){
             event.target.className = 'color selected'
         }
     }
-})
+ }
 }
-selecionaCor ();
+selecionaCor ()
+
+//requisito 8
+function pintaPixel () {
+let sectionCores = document.querySelector('#color-palette');
+let cores = document.querySelectorAll('.color');
+let Listacores = ['black', 'blue', 'green', 'yellow'];
+let pixel = document.querySelectorAll('.pixel')
+let sectionPixel = document.querySelector('#pixel-board');
+sectionPixel.addEventListener('click', evento2);
+function evento2 () {
+for (let i = 0; i < cores.length; i += 1) {
+    cores[i].id = Listacores[i]
+    sectionCores.appendChild(cores[i])
+    if (cores[i].className == 'color selected') {
+        event.target.style.backgroundColor = Listacores[i]
+    }
+}
+
+
+ }
+}
+pintaPixel ()
+
 
