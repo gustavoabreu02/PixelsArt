@@ -9,7 +9,6 @@ function coresPaleta () {
     for (let i = 0; i < cores.length; i += 1) {
         let divColor = document.createElement('div');
         divColor.className = 'color';
-        divColor.classList.add(cores[i]);
         divColor.style.border = '1px solid black';
         divColor.style.height = '50px';
         divColor.style.width = '50px';
@@ -43,7 +42,24 @@ function pixels () {
 pixels ();
 
 //requisito 6
-let corBlack = document.querySelector('.black');
-corBlack.classList.add('selected');
+let corBlack = document.querySelectorAll('.color');
+corBlack[0].classList.add('selected');
 
+//requisito 7
+let divCores = document.querySelector('#color-palette');
+function selecionaCor () {
+let cores = document.querySelectorAll('.color')
+divCores.addEventListener('click', function(event){
+    for (let i = 0; i < cores.length; i += 1) {
+        if (event.target.className == 'color') {
+            cores[i].className = 'color'
+            event.target.className = 'color selected'
+        } else if (event.target.className == 'color selected') {
+            cores[i].className = 'color'
+            event.target.className = 'color selected'
+        }
+    }
+})
+}
+selecionaCor ();
 
