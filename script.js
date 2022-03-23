@@ -39,7 +39,7 @@ function pixels () {
     section.style.display = 'grid'
     section.style.gridTemplateColumns = '40px 40px 40px 40px 40px'
     section.style.marginLeft = '2.3%'
-    section.style.marginTop = '40px'
+    section.style.marginTop = '90px'
 }
 pixels ();
 
@@ -88,6 +88,29 @@ for (let i = 0; i < cores.length; i += 1) {
 
  }
 }
-pintaPixel ()
+pintaPixel ();
+
+//requisito 9
+function limpaPixel () {
+    let button = document.createElement('button');
+    button.innerText = 'Limpar'
+    button.id = 'clear-board'
+    button.style.position = 'absolute'
+    button.style.marginTop = '-270px'
+    button.style.marginLeft = '75px'
+    button.style.padding = '6px'
+    button.style.width = '100px'
+    button.style.borderRadius = '8%'
+    acessoMain.appendChild(button)
+    let pixel = document.querySelectorAll('.pixel')
+    button.addEventListener('click', evento3);
+    function evento3 () {
+        let pixel = document.querySelectorAll('.pixel')
+        for (let i2 = 0; i2 < pixel.length; i2 += 1) {
+        pixel[i2].style.backgroundColor = 'white'
+        }    
+    }
+}
+limpaPixel ();
 
 
