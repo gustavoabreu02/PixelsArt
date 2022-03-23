@@ -21,12 +21,30 @@ function coresPaleta () {
 } 
 coresPaleta(); 
 
-//requisito 4
+//requisito 4 e 10
 function pixels () {
+    let body = document.querySelector('body')
     let section = document.createElement('section');
     section.id = 'pixel-board';
     acessoMain.appendChild(section);
-    let acessoSection = document.querySelector('#pixel-board')
+    let acessoSection = document.querySelector('#pixel-board');
+    let button = document.createElement('button');
+    let input = document.createElement('input');
+    input.id = 'board-size';
+    button.id = 'generate-board';
+    button.innerText = 'VQV';
+    input.style.marginTop = '1px'
+    input.style.height = '17px'
+    input.style.width = '140px'
+    input.style.top = '202.3px'
+    input.style.left = '47.3%'
+    button.style.padding = '4px'
+    button.style.width = '70px'
+    button.style.borderRadius = '8%'
+    button.style.top = '200px'
+    button.style.left = '55.6%'
+    acessoMain.appendChild(button);
+    acessoMain.appendChild(input);
     for (let i = 0; i < 25; i += 1) {
         let divPixels = document.createElement('div');
         divPixels.className = 'pixel';
@@ -35,11 +53,47 @@ function pixels () {
         divPixels.style.height = '40px';
         divPixels.style.width = '40px';
         acessoSection.appendChild(divPixels)
+       }
+    button.addEventListener('click', evento5)
+    function evento5 () {
+        let pixels = document.querySelectorAll('.pixel');
+        let acesso = document.querySelector('#pixel-board').innerHTML = '';
+        let valor = input.value
+        let resul = parseInt(valor)
+    if (resul >= 5 && resul <= 50) {
+        for (let i2 = 0; i2 < resul * resul; i2 += 1) {
+            let section = document.querySelector('#pixel-board')
+            let divPixels = document.createElement('div');
+            divPixels.className = 'pixel';
+            divPixels.style.backgroundColor = 'white';
+            divPixels.style.border = '1px solid black';
+            divPixels.style.height = '40px';
+            divPixels.style.width = '40px';
+            section.style.display = 'grid'
+            section.style.gridTemplateColumns = 'repeat(' + resul + ',40px)'
+            section.style.marginLeft = '2.3%'
+            section.style.marginTop = '90px'
+            acessoSection.appendChild(divPixels)
+        }
+        pintaPixel ();
+    } else if (valor = ' ') {
+        alert("Board inválido!")
+        for (let i = 0; i < 25; i += 1) {
+            let divPixels = document.createElement('div');
+            divPixels.className = 'pixel';
+            divPixels.style.backgroundColor = 'white';
+            divPixels.style.border = '1px solid black';
+            divPixels.style.height = '40px';
+            divPixels.style.width = '40px';
+            acessoSection.appendChild(divPixels)
+           }
+
     }
-    section.style.display = 'grid'
-    section.style.gridTemplateColumns = '40px 40px 40px 40px 40px'
-    section.style.marginLeft = '2.3%'
-    section.style.marginTop = '90px'
+ }
+            section.style.display = 'grid'
+            section.style.gridTemplateColumns = 'repeat(5,40px)'
+            section.style.marginLeft = '2.3%'
+            section.style.marginTop = '90px' 
 }
 pixels ();
 
@@ -95,12 +149,12 @@ function limpaPixel () {
     let button = document.createElement('button');
     button.innerText = 'Limpar'
     button.id = 'clear-board'
-    button.style.position = 'absolute'
-    button.style.marginTop = '-270px'
-    button.style.marginLeft = '75px'
-    button.style.padding = '6px'
-    button.style.width = '100px'
+    button.style.padding = '4px'
+    button.style.width = '75px'
     button.style.borderRadius = '8%'
+    button.style.position = 'absolute'
+    button.style.top = '200px'
+    button.style.left = '42.9%'
     acessoMain.appendChild(button)
     let pixel = document.querySelectorAll('.pixel')
     button.addEventListener('click', evento3);
@@ -112,5 +166,7 @@ function limpaPixel () {
     }
 }
 limpaPixel ();
+
+
 
 
