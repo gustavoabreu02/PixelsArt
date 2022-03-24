@@ -1,3 +1,14 @@
+function gerar_cor_hexadecimal()
+{
+  return '#' + parseInt((Math.random() * 0xFFFFFF))
+    .toString(16)
+    .padStart(6, '0');
+}
+let Listacores = [];
+for (let i3 = 0; i3 < 4; i3 += 1) {
+Listacores.push(gerar_cor_hexadecimal())
+}
+Listacores[0] = 'black'
 //requisito 2
 let acessoMain = document.querySelector('main');
 function coresPaleta () {
@@ -15,7 +26,7 @@ function coresPaleta () {
         divColor.style.width = '50px';
         divColor.style.display = 'inline-block';
         divColor.style.margin = '5px'
-        divColor.style.backgroundColor = cores[i];
+        divColor.style.backgroundColor = Listacores[i]
         acessoSection.appendChild(divColor)
     }
 } 
@@ -23,6 +34,9 @@ coresPaleta();
 
 //requisito 4 e 10
 function pixels () {
+    let section22 = document.createElement('section');
+    let lugar = document.querySelector('#color-palette')
+    lugar.appendChild(section22)
     let section = document.createElement('section');
     section.id = 'pixel-board';
     acessoMain.appendChild(section);
@@ -32,16 +46,16 @@ function pixels () {
     input.id = 'board-size';
     button.id = 'generate-board';
     button.innerText = 'VQV';
-    //input.style.marginTop = '-100px'
-    //input.style.height = '17px'
-    //input.style.width = '140px'
-    //input.style.top = '202.3px'
-    //input.style.left = '47.3%'
-    //button.style.padding = '4px'
-    //button.style.width = '70px'
-    //button.style.borderRadius = '8%'
-    //button.style.top = '200px'
-    //button.style.left = '55.6%'
+    input.style.marginTop = '-100px'
+    input.style.height = '17px'
+    input.style.width = '140px'
+    input.style.top = '202.3px'
+    input.style.left = '47.3%'
+    button.style.padding = '4px'
+    button.style.width = '70px'
+    button.style.borderRadius = '8%'
+    button.style.top = '200px'
+    button.style.left = '55.6%'
     acessoMain.appendChild(button);
     acessoMain.appendChild(input);
     for (let i = 0; i < 25; i += 1) {
@@ -59,6 +73,9 @@ function pixels () {
         let acesso = document.querySelector('#pixel-board').innerHTML = '';
         let valor = input.value
         let resul = parseInt(valor)
+        if (resul > 50) {
+            resul = 50
+        }
     if (resul >= 5 && resul <= 50) {
         for (let i2 = 0; i2 < resul * resul; i2 += 1) {
             let section = document.querySelector('#pixel-board')
@@ -123,7 +140,6 @@ selecionaCor ()
 function pintaPixel () {
 let sectionCores = document.querySelector('#color-palette');
 let cores = document.querySelectorAll('.color');
-let Listacores = ['black', 'blue', 'green', 'yellow'];
 let pixel = document.querySelectorAll('.pixel')
 let sectionPixel = document.querySelector('#pixel-board');
 for (let i2 = 0; i2 < pixel.length; i2 += 1) {
@@ -137,8 +153,6 @@ for (let i = 0; i < cores.length; i += 1) {
         event.target.style.backgroundColor = Listacores[i]
     }
 }
-
-
  }
 }
 pintaPixel ();
@@ -148,12 +162,12 @@ function limpaPixel () {
     let button = document.createElement('button');
     button.innerText = 'Limpar'
     button.id = 'clear-board'
-    //button.style.padding = '4px'
-    //button.style.width = '75px'
-    //button.style.borderRadius = '8%'
-    //button.style.position = 'absolute'
-    //button.style.top = '200px'
-    //button.style.left = '42.9%'
+    button.style.padding = '4px'
+    button.style.width = '75px'
+    button.style.borderRadius = '8%'
+    button.style.position = 'absolute'
+    button.style.top = '200px'
+    button.style.left = '42.9%'
     acessoMain.appendChild(button)
     let pixel = document.querySelectorAll('.pixel')
     button.addEventListener('click', evento3);
