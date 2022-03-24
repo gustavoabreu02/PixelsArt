@@ -1,3 +1,5 @@
+//https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+//aprendi a função gerar_cor_hexadecimal no site acima! :)
 function gerar_cor_hexadecimal()
 {
   return '#' + parseInt((Math.random() * 0xFFFFFF))
@@ -32,32 +34,26 @@ function coresPaleta () {
 } 
 coresPaleta(); 
 
-//requisito 4 e 10
-function pixels () {
-    let section22 = document.createElement('section');
-    let lugar = document.querySelector('#color-palette')
-    lugar.appendChild(section22)
+//requisito 10
+    let button = document.createElement('button');
+    let input = document.createElement('input');
+    input.id = 'board-size';
+    input.type = 'number'
+    input.min = '1'
+    button.id = 'generate-board';
+    button.innerText = 'VQV';
+    acessoMain.appendChild(button);
+    acessoMain.appendChild(input);
+   
+    
+
+
+//requisito 4
     let section = document.createElement('section');
     section.id = 'pixel-board';
     acessoMain.appendChild(section);
     let acessoSection = document.querySelector('#pixel-board');
-    let button = document.createElement('button');
-    let input = document.createElement('input');
-    input.id = 'board-size';
-    button.id = 'generate-board';
-    button.innerText = 'VQV';
-    input.style.marginTop = '-100px'
-    input.style.height = '17px'
-    input.style.width = '140px'
-    input.style.top = '202.3px'
-    input.style.left = '47.3%'
-    button.style.padding = '4px'
-    button.style.width = '70px'
-    button.style.borderRadius = '8%'
-    button.style.top = '200px'
-    button.style.left = '55.6%'
-    acessoMain.appendChild(button);
-    acessoMain.appendChild(input);
+
     for (let i = 0; i < 25; i += 1) {
         let divPixels = document.createElement('div');
         divPixels.className = 'pixel';
@@ -110,8 +106,6 @@ function pixels () {
             section.style.gridTemplateColumns = 'repeat(5,40px)'
             section.style.marginLeft = '2.3%'
             section.style.marginTop = '100px' 
-}
-pixels ();
 
 //requisito 6
 let corBlack = document.querySelectorAll('.color');
