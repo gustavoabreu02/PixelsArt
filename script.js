@@ -23,7 +23,6 @@ coresPaleta();
 
 //requisito 4 e 10
 function pixels () {
-    let body = document.querySelector('body')
     let section = document.createElement('section');
     section.id = 'pixel-board';
     acessoMain.appendChild(section);
@@ -33,16 +32,16 @@ function pixels () {
     input.id = 'board-size';
     button.id = 'generate-board';
     button.innerText = 'VQV';
-    input.style.marginTop = '1px'
-    input.style.height = '17px'
-    input.style.width = '140px'
-    input.style.top = '202.3px'
-    input.style.left = '47.3%'
-    button.style.padding = '4px'
-    button.style.width = '70px'
-    button.style.borderRadius = '8%'
-    button.style.top = '200px'
-    button.style.left = '55.6%'
+    //input.style.marginTop = '-100px'
+    //input.style.height = '17px'
+    //input.style.width = '140px'
+    //input.style.top = '202.3px'
+    //input.style.left = '47.3%'
+    //button.style.padding = '4px'
+    //button.style.width = '70px'
+    //button.style.borderRadius = '8%'
+    //button.style.top = '200px'
+    //button.style.left = '55.6%'
     acessoMain.appendChild(button);
     acessoMain.appendChild(input);
     for (let i = 0; i < 25; i += 1) {
@@ -93,7 +92,7 @@ function pixels () {
             section.style.display = 'grid'
             section.style.gridTemplateColumns = 'repeat(5,40px)'
             section.style.marginLeft = '2.3%'
-            section.style.marginTop = '90px' 
+            section.style.marginTop = '100px' 
 }
 pixels ();
 
@@ -149,12 +148,12 @@ function limpaPixel () {
     let button = document.createElement('button');
     button.innerText = 'Limpar'
     button.id = 'clear-board'
-    button.style.padding = '4px'
-    button.style.width = '75px'
-    button.style.borderRadius = '8%'
-    button.style.position = 'absolute'
-    button.style.top = '200px'
-    button.style.left = '42.9%'
+    //button.style.padding = '4px'
+    //button.style.width = '75px'
+    //button.style.borderRadius = '8%'
+    //button.style.position = 'absolute'
+    //button.style.top = '200px'
+    //button.style.left = '42.9%'
     acessoMain.appendChild(button)
     let pixel = document.querySelectorAll('.pixel')
     button.addEventListener('click', evento3);
