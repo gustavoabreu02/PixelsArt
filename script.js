@@ -44,7 +44,15 @@ coresPaleta();
     button.innerText = 'VQV';
     acessoMain.appendChild(button);
     acessoMain.appendChild(input);
-   
+    let valor = input.value
+    let resul = parseInt(valor)
+    if (resul == 0) {
+        section.style.display = 'grid'
+        section.style.gridTemplateColumns = 'repeat(5,40px)'
+        section.style.marginLeft = '2.3%'
+        section.style.marginTop = '100px'
+
+    }
     
 
 
